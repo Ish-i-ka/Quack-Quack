@@ -108,7 +108,7 @@ export default function Step1Skills({ onNext }: { onNext: (data: any, scoreData:
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className="w-full justify-between h-10 bg-transparent"
+            className="w-full justify-between h-10 bg-foreground"
           >
             {selectedSkills.length > 0 ? "Select more skills..." : "Select skills..."}
             <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
