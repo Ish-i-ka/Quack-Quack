@@ -46,7 +46,7 @@ export default function HostRootPage() {
             <div className="space-y-6">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance leading-tight">
                 <span className="text-foreground">Launch & Manage </span>
-                <span className="bg-linear-to-r from-primary via-primary to-accent bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-primary via-accent to-primary bg-clip-text text-transparent font-extrabold">
                   Your Own Hackathon
                 </span>
                 <br />

@@ -15,17 +15,17 @@ export default function Navbar() {
         <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
           <svg
             viewBox="0 0 24 24"
-            width={24}
-            height={24}
-            fill="none"
+            width={20}
+            height={20}
+            fill="#000000"
             xmlns="http://www.w3.org/2000/svg"
             className="mr-2"
           >
-            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#7A584F" stroke="#7A584F" strokeWidth={1} />
-            <path d="M2 17L12 22L22 17" stroke="#7A584F" strokeWidth={1} />
-            <path d="M2 12L12 17L22 12" stroke="#7A584F" strokeWidth={1} />
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#FFFFFF" stroke="#7A584F" strokeWidth={1} />
+            <path d="M2 17L12 22L22 17" stroke="#FFFFFF" strokeWidth={1} />
+            <path d="M2 12L12 17L22 12" stroke="#FFFFFF" strokeWidth={1} />
           </svg>
-          <span className="font-bold text-3xl bg-linear-to-r from-secondary via-accent to-primary bg-clip-text text-transparent">
+          <span className="font-bold text-xl bg-linear-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
             HACKVERSE
           </span>
         </Link>

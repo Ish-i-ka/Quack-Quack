@@ -47,11 +47,11 @@
 }
 
 * {
-  scrollbar-width: thin; /* auto | thin | none */
+  scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-thumb-1) var(--scrollbar-track);
 }
 .scrollable:focus-visible {
-  outline: none; /* keep focus ring off the element itself */
+  outline: none;
 }
 .scrollable:focus-visible::-webkit-scrollbar-thumb {
   box-shadow: 0 0 0 3px var(--scrollbar-outline), inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 6px 18px
@@ -67,68 +67,74 @@
 }
 
 :root {
-  /* Updated scrollbar to use green tones */
-  --scrollbar-track: #f2f3ed;
-  --scrollbar-thumb-1: #c6d6c5; /* sage green base */
-  --scrollbar-thumb-2: #bcc399; /* olive highlight */
-  --scrollbar-thumb-hover-1: #b8c9b7;
-  --scrollbar-thumb-active: #a8b88a;
-  --scrollbar-accent: rgba(198, 214, 197, 0.2); /* subtle green accent */
+  /* Updated scrollbar to use dark theme with coral green and milky white */
+  --scrollbar-track: #151513; /* deep dark background */
+  --scrollbar-thumb-1: #8fa882; /* light coral green base */
+  --scrollbar-thumb-2: #f5f2ed; /* milky white highlight */
+  --scrollbar-thumb-hover-1: #a3bda0;
+  --scrollbar-thumb-active: #7a9470;
+  --scrollbar-accent: rgba(245, 242, 237, 0.2); /* milky white glow */
   --scrollbar-radius: 999px;
   --scrollbar-size: 12px;
-  --scrollbar-outline: rgba(198, 214, 197, 0.3);
+  --scrollbar-outline: rgba(245, 242, 237, 0.3);
   --scrollbar-transition: 160ms;
 
-  /* Rebalanced theme colors to use both greens and browns */
-  --background: oklch(0.97 0.01 85); /* #F5F1E8 - light cream */
-  --foreground: oklch(0.15 0.005 60); /* #151513 - almost black */
-  --card: oklch(0.98 0.008 80); /* #F2F3ED - off-white */
-  --card-foreground: oklch(0.15 0.005 60);
-  --popover: oklch(0.98 0.008 80);
-  --popover-foreground: oklch(0.15 0.005 60);
+  /* Converted to dark theme with earth-tone palette */
+  /* Deep charcoal background - #151513 */
+  --background: oklch(0.09 0.005 60);
+  /* Milky white for softer text */
+  --foreground: oklch(0.97 0.01 80);
 
-  /* Swapped primary and secondary colors - brown is now default, green on hover */
-  --primary: oklch(0.45 0.04 50); /* #7A584F - warm brown (was secondary) */
-  --primary-foreground: oklch(0.97 0.01 85); /* light text on brown */
+  /* Cards with translucent light coral green for glass effect */
+  --card: oklch(0.28 0.03 140 / 0.3); /* Light coral green with 30% opacity */
+  --card-foreground: oklch(0.96 0.012 75); /* Milky white text */
 
-  /* Secondary using sage green (was primary) */
-  --secondary: oklch(0.82 0.025 145); /* #C6D6C5 - sage green (was primary) */
-  --secondary-foreground: oklch(0.15 0.005 60); /* dark text on green */
+  --popover: oklch(0.22 0.02 40);
+  --popover-foreground: oklch(0.97 0.01 80);
 
-  /* Muted using light beige */
-  --muted: oklch(0.88 0.02 75); /* #E0D4BE - light beige */
-  --muted-foreground: oklch(0.35 0.01 60);
+  /* Primary buttons - light warm beige #E0D4BE for lighter tone */
+  --primary: oklch(0.85 0.03 70); /* Light beige */
+  --primary-foreground: oklch(0.12 0.01 40); /* Dark text on light button */
 
-  /* Accent using olive/moss for highlights */
-  --accent: oklch(0.77 0.04 100); /* #BCC399 - olive/moss */
-  --accent-foreground: oklch(0.15 0.005 60);
+  /* Secondary - warm tan #C2A589 */
+  --secondary: oklch(0.72 0.04 65);
+  --secondary-foreground: oklch(0.12 0.01 40);
 
-  --destructive: oklch(0.55 0.25 25);
-  --destructive-foreground: oklch(0.98 0.001 0);
+  /* Muted with light coral green tones */
+  --muted: oklch(0.32 0.035 135);
+  --muted-foreground: oklch(0.88 0.02 75);
 
-  /* Border using tan */
-  --border: oklch(0.8 0.02 70); /* #C2A589 - tan */
-  --input: oklch(0.88 0.02 75);
-  --ring: oklch(0.82 0.025 145); /* sage green ring */
+  /* Accent - light coral green */
+  --accent: oklch(0.68 0.06 140);
+  --accent-foreground: oklch(0.97 0.01 80);
 
-  /* Chart colors alternating between greens and browns */
-  --chart-1: oklch(0.82 0.025 145); /* sage green */
-  --chart-2: oklch(0.45 0.04 50); /* warm brown */
-  --chart-3: oklch(0.77 0.04 100); /* olive */
-  --chart-4: oklch(0.8 0.02 70); /* tan */
-  --chart-5: oklch(0.88 0.02 75); /* beige */
+  /* Destructive - using brown tone instead of red */
+  --destructive: oklch(0.42 0.03 40);
+  --destructive-foreground: oklch(0.97 0.01 80);
+
+  /* Borders with subtle coral green tint */
+  --border: oklch(0.38 0.03 135);
+  --input: oklch(0.25 0.02 40);
+  --ring: oklch(0.85 0.03 70);
+
+  /* Chart colors with full palette */
+  --chart-1: oklch(0.97 0.01 80); /* milky white */
+  --chart-2: oklch(0.68 0.06 140); /* light coral green */
+  --chart-3: oklch(0.85 0.03 70); /* light beige #E0D4BE */
+  --chart-4: oklch(0.72 0.04 65); /* warm tan #C2A589 */
+  --chart-5: oklch(0.75 0.05 110); /* sage green #BCC399 */
 
   --radius: 0.625rem;
 
-  /* Updated sidebar-primary to match new primary color */
-  --sidebar: oklch(0.97 0.01 85);
-  --sidebar-foreground: oklch(0.15 0.005 60);
-  --sidebar-primary: oklch(0.45 0.04 50); /* warm brown to match primary */
-  --sidebar-primary-foreground: oklch(0.97 0.01 85);
-  --sidebar-accent: oklch(0.77 0.04 100); /* olive */
-  --sidebar-accent-foreground: oklch(0.15 0.005 60);
-  --sidebar-border: oklch(0.8 0.02 70);
-  --sidebar-ring: oklch(0.82 0.025 145);
+  /* Sidebar with milky white and coral green accents */
+  --sidebar: oklch(0.14 0.01 40);
+  --sidebar-foreground: oklch(0.97 0.01 80);
+  --sidebar-primary: oklch(0.68 0.06 140); /* Light coral green */
+  --sidebar-primary-foreground: oklch(0.97 0.01 80);
+  --sidebar-accent: oklch(0.32 0.035 135);
+  --sidebar-accent-foreground: oklch(0.96 0.012 75);
+  --sidebar-border: oklch(0.25 0.02 40);
+  --sidebar-ring: oklch(0.85 0.03 70);
 }
 
 @theme inline {
@@ -180,13 +186,48 @@
     @apply bg-background text-foreground;
   }
 
-  /* Added smooth transitions for interactive elements */
+  /* Added smooth transitions and backdrop blur for glass effect */
   button,
   a,
   [role="button"],
   .cursor-pointer {
     cursor: pointer;
     transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease, transform 200ms ease;
+  }
+
+  /* Add backdrop blur for translucent glass effect on cards */
+  .bg-card {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Override blue colors to use olive green #778E69 */
+  .bg-blue-600,
+  .dark .bg-blue-600 {
+    background-color: #778e69 !important;
+  }
+
+  .hover\:bg-blue-700:hover,
+  .dark .hover\:bg-blue-700:hover {
+    background-color: #6a7f5e !important;
+  }
+
+  .text-blue-600,
+  .text-blue-500 {
+    color: #778e69 !important;
+  }
+
+  .dark .text-blue-400 {
+    color: #8fa882 !important;
+  }
+
+  /* Add green hover effect for cards instead of blue/slate */
+  .hover\:bg-slate-50:hover {
+    background-color: rgba(119, 142, 105, 0.08) !important;
+  }
+
+  .dark .hover\:bg-slate-900\/50:hover {
+    background-color: rgba(119, 142, 105, 0.15) !important;
   }
 }
 

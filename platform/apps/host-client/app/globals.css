@@ -2,194 +2,114 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
-*,
-*::before,
-*::after {
-  /* ensure custom scrollbar applies everywhere (including components) */
-  scrollbar-color: var(--scrollbar-thumb-1) var(--scrollbar-track); /* fallback for UA that reads both */
-}
-
-/* width for vertical scrollbar and height for horizontal */
-*::-webkit-scrollbar {
-  width: var(--scrollbar-size);
-  height: var(--scrollbar-size);
-  background: transparent;
-}
-
-/* track (the empty space) */
-*::-webkit-scrollbar-track {
-  background: linear-gradient(180deg, rgba(0,0,0,0.12), transparent),
-              var(--scrollbar-track);
-  border-radius: var(--scrollbar-radius);
-  box-shadow: inset 0 0 0 1px var(--scrollbar-accent);
-}
-
-/* thumb (the draggable piece) */
-*::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--scrollbar-thumb-1), var(--scrollbar-thumb-2));
-  border-radius: var(--scrollbar-radius);
-  min-height: 28px;
-  border: 3px solid transparent; /* creates padding between thumb and track */
-  background-clip: content-box;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.03), 0 2px 6px rgba(2,6,23,0.5);
-  transition: transform var(--scrollbar-transition) ease, box-shadow var(--scrollbar-transition) ease;
-}
-
-/* hover state */
-*::-webkit-scrollbar-thumb:hover {
-  transform: scale(1.04);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.04),
-    0 4px 12px rgba(2,6,23,0.6);
-  background: linear-gradient(180deg, var(--scrollbar-thumb-hover-1), var(--scrollbar-thumb-2));
-}
-
-/* active (dragging) */
-*::-webkit-scrollbar-thumb:active {
-  transform: scale(1.02);
-  background: linear-gradient(180deg, var(--scrollbar-thumb-active), var(--scrollbar-thumb-2));
-  box-shadow: inset 0 2px 6px rgba(0,0,0,0.6);
-  transition-duration: 80ms;
-}
-
-/* corner when both scrollbars visible */
-*::-webkit-scrollbar-corner {
-  background: transparent;
-  box-shadow: inset 0 0 0 1px var(--scrollbar-accent);
-  border-radius: 2px;
-}
-
-/* Firefox: uses different properties */
-* {
-  scrollbar-width: thin; /* auto | thin | none */
-  scrollbar-color: var(--scrollbar-thumb-1) var(--scrollbar-track);
-}
-
-/* Focus-visible accessibility for keyboard users:
-   If a user tabs to a scroll container (e.g., a scrollable div),
-   show a subtle outline on the thumb (applies when the scroll container is focused). */
-.scrollable:focus-visible {
-  outline: none; /* keep focus ring off the element itself */
-}
-.scrollable:focus-visible::-webkit-scrollbar-thumb {
-  box-shadow:
-    0 0 0 3px var(--scrollbar-outline),
-    inset 0 1px 0 rgba(255,255,255,0.04),
-    0 6px 18px rgba(2,6,23,0.65);
-}
-
-/* Respect prefers-reduced-motion */
-@media (prefers-reduced-motion: reduce) {
-  *::-webkit-scrollbar-thumb,
-  *::-webkit-scrollbar-thumb:hover,
-  *::-webkit-scrollbar-thumb:active {
-    transition: none;
-    transform: none;
-  }
-}
-
-
 
 :root {
-  /* Light theme - clean and minimal */
-  --scrollbar-track: #071029;      /* deep navy background */
-  --scrollbar-thumb-1: #0e4a7b;    /* dark-blue base */
-  --scrollbar-thumb-2: #2a7bbf;    /* lighter blue highlight */
-  --scrollbar-thumb-hover-1: #386da0;
-  --scrollbar-thumb-active: #1b5f92;
-  --scrollbar-accent: rgba(255,255,255,0.06); /* subtle inner glow */
-  --scrollbar-radius: 999px;       /* pill shape */
-  --scrollbar-size: 12px;          /* width / height */
-  --scrollbar-outline: rgba(255,255,255,0.06);
-  --scrollbar-transition: 160ms;
-  --background: oklch(0.98 0.001 0);
-  --foreground: oklch(0.2 0.01 250);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.2 0.01 250);
+  --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.2 0.01 250);
-  /* Refined slate blue primary */
-  --primary: oklch(0.45 0.12 250);
-  --primary-foreground: oklch(0.98 0.001 0);
-  --secondary: oklch(0.92 0.02 250);
-  --secondary-foreground: oklch(0.2 0.01 250);
-  /* Muted grays */
-  --muted: oklch(0.92 0.01 250);
-  --muted-foreground: oklch(0.5 0.02 250);
-  /* Warm amber accent */
-  --accent: oklch(0.72 0.2 70);
-  --accent-foreground: oklch(0.2 0.01 250);
-  --destructive: oklch(0.55 0.25 25);
-  --destructive-foreground: oklch(0.98 0.001 0);
-  --border: oklch(0.92 0.01 250);
-  --input: oklch(0.96 0.01 250);
-  --ring: oklch(0.45 0.12 250);
-  /* Balanced chart colors */
-  --chart-1: oklch(0.72 0.2 70);
-  --chart-2: oklch(0.45 0.12 250);
-  --chart-3: oklch(0.6 0.18 180);
-  --chart-4: oklch(0.5 0.2 160);
-  --chart-5: oklch(0.65 0.16 330);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
   --radius: 0.625rem;
-  --sidebar: oklch(0.98 0.001 0);
-  --sidebar-foreground: oklch(0.2 0.01 250);
-  --sidebar-primary: oklch(0.45 0.12 250);
-  --sidebar-primary-foreground: oklch(0.98 0.001 0);
-  --sidebar-accent: oklch(0.92 0.02 250);
-  --sidebar-accent-foreground: oklch(0.2 0.01 250);
-  --sidebar-border: oklch(0.92 0.01 250);
-  --sidebar-ring: oklch(0.45 0.12 250);
-}
-.dark {
-  /* Sophisticated dark theme with slate blue primary and warm amber accents */
-  /* Deep charcoal background with proper contrast */
-  --background: oklch(0.11 0.01 250);
-  --foreground: oklch(0.95 0.01 250);
-  --card: oklch(0.15 0.01 250);
-  --card-foreground: oklch(0.95 0.01 250);
-  --popover: oklch(0.14 0.01 250);
-  --popover-foreground: oklch(0.95 0.01 250);
-  /* Slate blue primary - modern and refined */
-  --primary: oklch(0.65 0.15 250);
-  --primary-foreground: oklch(0.11 0.01 250);
-  /* Subtle secondary layer */
-  --secondary: oklch(0.22 0.02 250);
-  --secondary-foreground: oklch(0.95 0.01 250);
-  /* Muted elements with good hierarchy */
-  --muted: oklch(0.25 0.01 250);
-  --muted-foreground: oklch(0.65 0.01 250);
-  /* Warm amber accent for pop */
-  --accent: oklch(0.75 0.18 70);
-  --accent-foreground: oklch(0.11 0.01 250);
-  /* Red for destructive */
-  --destructive: oklch(0.62 0.22 25);
-  --destructive-foreground: oklch(0.95 0.01 250);
-  /* Subtle borders and inputs */
-  --border: oklch(0.22 0.01 250);
-  --input: oklch(0.18 0.01 250);
-  --ring: oklch(0.65 0.15 250);
-  /* Vibrant chart colors for contrast */
-  --chart-1: oklch(0.75 0.18 70);
-  --chart-2: oklch(0.65 0.15 250);
-  --chart-3: oklch(0.7 0.16 180);
-  --chart-4: oklch(0.68 0.17 160);
-  --chart-5: oklch(0.72 0.15 330);
-  /* Sidebar with slightly lighter tone */
-  --sidebar: oklch(0.13 0.01 250);
-  --sidebar-foreground: oklch(0.95 0.01 250);
-  --sidebar-primary: oklch(0.65 0.15 250);
-  --sidebar-primary-foreground: oklch(0.11 0.01 250);
-  --sidebar-accent: oklch(0.22 0.02 250);
-  --sidebar-accent-foreground: oklch(0.95 0.01 250);
-  --sidebar-border: oklch(0.2 0.01 250);
-  --sidebar-ring: oklch(0.65 0.15 250);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 }
 
+.dark {
+  /* Updated to custom earth-tone palette with dark background */
+  /* Deep charcoal background - #151513 */
+  --background: oklch(0.09 0.005 60);
+  /* Added milky white for softer text */
+  --foreground: oklch(0.97 0.01 80); /* Milky white with warm undertone */
+
+  /* Cards with translucent light coral green for glass effect */
+  --card: oklch(0.28 0.03 140 / 0.3); /* Light coral green with 30% opacity for translucency */
+  --card-foreground: oklch(0.96 0.012 75); /* Milky white text */
+
+  /* Popovers slightly lighter */
+  --popover: oklch(0.22 0.02 40);
+  --popover-foreground: oklch(0.97 0.01 80); /* Milky white */
+
+  /* Primary buttons - light warm beige #E0D4BE for lighter tone */
+  --primary: oklch(0.85 0.03 70); /* Light beige #E0D4BE */
+  --primary-foreground: oklch(0.12 0.01 40); /* Dark text on light button */
+
+  /* Secondary - warm tan #C2A589 for variety */
+  --secondary: oklch(0.72 0.04 65); /* Warm tan */
+  --secondary-foreground: oklch(0.12 0.01 40); /* Dark text */
+
+  /* Muted with light coral green tones */
+  --muted: oklch(0.32 0.035 135); /* Light coral green for muted backgrounds */
+  --muted-foreground: oklch(0.88 0.02 75); /* Soft milky beige text */
+
+  /* Accent - light coral green with milky white text */
+  --accent: oklch(0.68 0.06 140); /* Light coral green accent */
+  --accent-foreground: oklch(0.97 0.01 80); /* Milky white text */
+
+  /* Destructive - using brown tone instead of red */
+  --destructive: oklch(0.42 0.03 40); /* Dark brown for destructive */
+  --destructive-foreground: oklch(0.97 0.01 80); /* Milky white text */
+
+  /* Borders with subtle coral green tint */
+  --border: oklch(0.38 0.03 135); /* Light coral green borders */
+  --input: oklch(0.25 0.02 40);
+
+  /* Ring - light beige for focus states */
+  --ring: oklch(0.85 0.03 70);
+
+  /* Chart colors with milky white and coral green added */
+  --chart-1: oklch(0.97 0.01 80); /* milky white */
+  --chart-2: oklch(0.68 0.06 140); /* light coral green */
+  --chart-3: oklch(0.85 0.03 70); /* light beige #E0D4BE */
+  --chart-4: oklch(0.72 0.04 65); /* warm tan #C2A589 */
+  --chart-5: oklch(0.75 0.05 110); /* sage green #BCC399 */
+
+  /* Sidebar with milky white and coral green accents */
+  --sidebar: oklch(0.14 0.01 40);
+  --sidebar-foreground: oklch(0.97 0.01 80); /* Milky white text */
+  --sidebar-primary: oklch(0.68 0.06 140); /* Light coral green */
+  --sidebar-primary-foreground: oklch(0.97 0.01 80); /* Milky white */
+  --sidebar-accent: oklch(0.32 0.035 135); /* Light coral green accent */
+  --sidebar-accent-foreground: oklch(0.96 0.012 75); /* Milky white */
+  --sidebar-border: oklch(0.25 0.02 40);
+  --sidebar-ring: oklch(0.85 0.03 70);
+
+  /* Scrollbar with milky white and coral green highlights */
+  --scrollbar-track: #151513; /* deep dark background */
+  --scrollbar-thumb-1: #8fa882; /* light coral green base */
+  --scrollbar-thumb-2: #f5f2ed; /* milky white highlight */
+  --scrollbar-thumb-hover-1: #a3bda0;
+  --scrollbar-thumb-active: #7a9470;
+  --scrollbar-accent: rgba(245, 242, 237, 0.2); /* milky white glow */
+}
 
 @theme inline {
   --font-sans: "Geist", "Geist Fallback";
   --font-mono: "Geist Mono", "Geist Mono Fallback";
-
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -245,43 +165,50 @@
   .cursor-pointer {
     cursor: pointer;
   }
-  /* Apply pink-orange gradient to buttons with bg-primary */
+  /* Updated button gradients to use lighter beige tones */
   button.bg-primary,
   a.bg-primary,
   [role="button"].bg-primary {
-    background: linear-gradient(135deg, oklch(0.68 0.22 15), oklch(0.72 0.20 35)) !important;
+    background: linear-gradient(135deg, oklch(0.82 0.03 68), oklch(0.85 0.03 70)) !important;
   }
   button.bg-primary:hover,
   a.bg-primary:hover,
   [role="button"].bg-primary:hover {
-    background: linear-gradient(135deg, oklch(0.65 0.24 10), oklch(0.68 0.22 30)) !important;
-  }
-}
-
-@layer utilities {
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-      transform: translateY(-20px) rotate(5deg);
-    }
+    background: linear-gradient(135deg, oklch(0.78 0.035 65), oklch(0.82 0.035 68)) !important;
   }
 
-  @keyframes float-delayed {
-    0%, 100% {
-      transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-      transform: translateY(-15px) rotate(-5deg);
-    }
+  /* Add backdrop blur for glass effect on cards */
+  .bg-card {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
+  /* Override blue colors to use olive green #778E69 for buttons and links */
+  .bg-blue-600,
+  .dark .bg-blue-600 {
+    background-color: #778e69 !important;
   }
 
-  .animate-float-delayed {
-    animation: float-delayed 8s ease-in-out infinite;
+  .hover\:bg-blue-700:hover,
+  .dark .hover\:bg-blue-700:hover {
+    background-color: #6a7f5e !important;
+  }
+
+  .text-blue-600,
+  .text-blue-500 {
+    color: #778e69 !important;
+  }
+
+  .dark .text-blue-400 {
+    color: #8fa882 !important;
+  }
+
+  /* Add green hover effect for project cards instead of blue/slate */
+  .hover\:bg-slate-50:hover {
+    background-color: rgba(119, 142, 105, 0.08) !important;
+  }
+
+  .dark .hover\:bg-slate-900\/50:hover {
+    background-color: rgba(119, 142, 105, 0.15) !important;
   }
 }

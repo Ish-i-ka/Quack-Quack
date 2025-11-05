@@ -28,8 +28,8 @@ export default function Sidebar() {
               className={`flex items-center gap-3 rounded-lg px-4 py-3.5 text-sm font-medium transition-all duration-200
                                 ${
                                   isActive
-                                    ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-                                    : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                                    ? "bg-primary/10 text-primary border border-primary/20 shadow-lg shadow-primary/20"
+                                    : "text-muted-foreground border border-transparent"
                                 }`}
             >
               <item.icon className="h-5 w-5 shrink-0" />
